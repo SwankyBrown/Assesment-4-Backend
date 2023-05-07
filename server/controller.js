@@ -1,35 +1,44 @@
-const orbSubjects = []
+const database = []
+
 module.exports = {
 
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
       
-        // choose random compliment
+        
         let randomIndex = Math.floor(Math.random() * compliments.length);
         let randomCompliment = compliments[randomIndex];
       
         res.status(200).send(randomCompliment);
     },
-
-    getFortune: (req, res) => {
-        const fortunes = ["you will become an exact copy of Seth Rogan!","you will have the same fate as Thanos!","the next tree you sit next to will kill you!","you get asthma!","you will be teleported to shiganshina!(outside of wall-Maria)"]
+    getRage: (req, res) => {
+        const rage = ["AHHHHHHHHHHHHHH!", "RAAAAAAAAAAAAAAH!", "REEEEEEEEEEEEEEEEEEEEEEEEEE!","NAH NAH AHHHHHHHHHHHHH!","RAAAAAAAAGE CAAAAAAAAGE!"];
+      
         
-        let randomIndex = Math.floor(Math.random() * fortunes.length);
-        let randomFortune = fortunes[randomIndex];
-       
-        res.status(200).send(randomFortune);
+        let randomIndex = Math.floor(Math.random() * rage.length);
+        let randomRage = rage[randomIndex];
+      
+        res.status(200).send(randomRage);
     },
-    postNameInOrb: (req, res) => {
+
+    submitName: (req,res) => {
         const name = req.body.name
         
-        const newName = {
+        const newObj = {
             name: name,
         }
+
+        database.push(newObj)
         
-        orbSubjects.push(newName)
+        res.status(200).send(database)
+    },
 
-        res.status(200).send(orbSubjects)
-
+    getHelp: (req, res) => {
+        const help = ['Im dying...help me.','Sorry, you\'re not getting help','have you tried listening to Nickelback?','There is nothing that i can do for you','we\'re in the same boat pal :)']
+        let randomIndex = Math.floor(Math.random() * help.length);
+        let randomHelp = help[randomIndex];
+      
+        res.status(200).send(randomHelp);
     }
 
 }

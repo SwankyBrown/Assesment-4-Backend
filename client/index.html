@@ -4,22 +4,21 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment!</button>
-    <button id="fortuneBtn">Get a Fortune!</button>
-    <form>
-      <h3>Save your name to the ORB!</h3>
-      <input
-      name = 'text'
-      placeholder="what is your name wizard?"
-      />
-      <button id="submitNameBtn">Submit to ORB</button>
-
-
+    <button id="complimentButton">Get a Compliment</button>
+    <button id="rageButton">RAGE!</button>
+    <!-- <form action="https://www.youtube.com/watch?v=WL7GfNHR-mo"> -->
+    <button id="helpBtn">Help!</button>
+    <!-- </form> -->
+    <br>
+    <form id='post-form'>
+    <h3>Save your name to the Orb!</h3>
+    <label for="post-name">Name:</label>
+    <input type="text" placeholder="What is yout name wizard?"/>
+    <button>Submit</button>
     </form>
-
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-    
     
   </body>
 </html>
