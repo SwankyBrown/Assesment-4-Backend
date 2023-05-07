@@ -3,6 +3,7 @@ const rageBtn = document.getElementById("rageButton")
 const postName = document.getElementById("post-name")
 const postForm = document.getElementById('post-form')
 const helpBtn = document.getElementById('helpBtn')
+const brandSelection = document.getElementById('brand')
 
 
 postForm.addEventListener('submit', (event) => {
@@ -47,9 +48,19 @@ const getHelp = () => {
     });
 };
 
+const getBrandOpinion = () => {
+    axios.get("http://localhost:4000/api/brand")
+    .then(res => {
+        const data = res.data;
+        alert(data);
+});
+}
+
 complimentBtn.addEventListener('click', getCompliment)
 rageBtn.addEventListener('click', getRage)
 helpBtn.addEventListener('click', getHelp)
+brandSelection.addEventListener('change',function getBrandOpinion() {alert(this.value);} ,false); 
+
 
 
 // function showDb(db){

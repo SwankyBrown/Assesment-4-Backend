@@ -27,8 +27,9 @@ module.exports = {
         const newObj = {
             name: name,
         }
-
+        
         database.push(newObj)
+        console.log(newObj);
         
         res.status(200).send(database)
     },
@@ -39,6 +40,12 @@ module.exports = {
         let randomHelp = help[randomIndex];
       
         res.status(200).send(randomHelp);
+    },
+    getBrandOpinion: (req,res) => {
+        const kawasaki = ['YOU BLEED GREEN!?, i knew you were attractive!']
+        let randomIndex = Math.floor(Math.random() * kawasaki.length);
+        let randomkawasakiOp = kawasaki[randomIndex]
+        res.status(200).send(randomkawasakiOp)
     }
 
 }
